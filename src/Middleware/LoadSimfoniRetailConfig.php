@@ -4,7 +4,7 @@ namespace MBLSolutions\SimfoniRetailLaravel\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Request;
-use MBLSolutions\SimfoniRetail\SimfoniRetail;
+use MBLSolutions\SimfoniRetail\Auth\SimfoniRetail;
 
 class LoadSimfoniRetailConfig
 {

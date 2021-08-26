@@ -4,7 +4,7 @@ namespace MBLSolutions\SimfoniRetailLaravel\Model;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use MBLSolutions\SimfoniRetail\Api\ApiResource;
-use MBLSolutions\SimfoniRetail\SimfoniRetail;
+use MBLSolutions\SimfoniRetail\Auth\SimfoniRetail;
 use MBLSolutions\SimfoniRetailLaravel\Model\Concerns\CanFake;
 use MBLSolutions\SimfoniRetailLaravel\Model\Concerns\HasAttributes;
 use MBLSolutions\SimfoniRetailLaravel\Pagination\SimfoniRetailPagination;

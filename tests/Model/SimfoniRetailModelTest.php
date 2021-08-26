@@ -4,7 +4,7 @@ namespace MBLSolutions\SimfoniRetailLaravel\Tests\Model;
 
 use MBLSolutions\SimfoniRetail\Profile;
 use MBLSolutions\SimfoniRetailLaravel\Model\SimfoniRetailModel;
-use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Brand;
+use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Funds;
 use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
 
 class SimfoniRetailModelTest extends TestCase
@@ -13,7 +13,7 @@ class SimfoniRetailModelTest extends TestCase
     /** @test **/
     public function can_create_a_new_inspired_deck_model()
     {
-        $model = new Brand();
+        $model = new Funds();
 
         $this->assertInstanceOf(SimfoniRetailModel::class, $model);
     }
@@ -23,10 +23,10 @@ class SimfoniRetailModelTest extends TestCase
     {
         $attributes = [
             'id' => 1,
-            'name' => 'constructed'
+            'name' => 'test'
         ];
 
-        $model = new Brand($attributes);
+        $model = new Funds($attributes);
 
         $this->assertEquals($attributes, $model->toArray());
     }
@@ -36,10 +36,10 @@ class SimfoniRetailModelTest extends TestCase
     {
         $attributes = [
             'id' => 1,
-            'name' => 'filled'
+            'name' => 'test'
         ];
 
-        $model = new Brand();
+        $model = new Funds();
 
         $model->fill($attributes);
 
@@ -51,10 +51,10 @@ class SimfoniRetailModelTest extends TestCase
     {
         $attributes = [
             'id' => 1,
-            'name' => 'filled'
+            'name' => 'test'
         ];
 
-        $model = new Brand($attributes);
+        $model = new Funds($attributes);
 
         $this->assertEquals($attributes, $model->toArray());
     }
@@ -64,10 +64,10 @@ class SimfoniRetailModelTest extends TestCase
     {
         $attributes = [
             'id' => 1,
-            'name' => 'filled'
+            'name' => 'test'
         ];
 
-        $model = new Brand($attributes);
+        $model = new Funds($attributes);
 
         $this->assertEquals(json_encode($attributes), $model->toJson());
     }
@@ -75,7 +75,7 @@ class SimfoniRetailModelTest extends TestCase
     /** @test **/
     public function can_set_attribute()
     {
-        $model = new Brand();
+        $model = new Funds();
 
         $model->setAttribute('id', 1);
 
@@ -85,7 +85,7 @@ class SimfoniRetailModelTest extends TestCase
     /** @test **/
     public function can_get_attribute()
     {
-        $model = new Brand([
+        $model = new Funds([
             'id' => 1
         ]);
 
@@ -95,27 +95,17 @@ class SimfoniRetailModelTest extends TestCase
     /** @test */
     public function can_get_models_resource()
     {
-        $model = new Brand();
+        $model = new Funds();
 
-        $this->assertEquals(\MBLSolutions\SimfoniRetail\Brand::class, $model->getResource());
-    }
-
-    /** @test */
-    public function can_set_the_models_resource()
-    {
-        $model = new Brand();
-
-        $model->setResource('MBLSolutions\SimfoniRetail\Profile');
-
-        $this->assertEquals(Profile::class, $model->getResource());
+        $this->assertEquals(\MBLSolutions\SimfoniRetail\Funds::class, $model->getResource());
     }
 
     /** @test */
     public function can_get_resource()
     {
-        $model = new Brand();
+        $model = new Funds();
 
-        $this->assertInstanceOf(\MBLSolutions\SimfoniRetail\Brand::class, $model->resource());
+        $this->assertInstanceOf(\MBLSolutions\SimfoniRetail\Funds::class, $model->resource());
         $this->assertInstanceOf(\MBLSolutions\SimfoniRetail\Api\ApiResource::class, $model->resource());
     }
 

@@ -36,6 +36,18 @@ return [
     |
     */
 
+    'simfoni_api_token' => env('SIMFONI_API_TOKEN', null),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Simfoni Retail OAuth Client ID
+    |--------------------------------------------------------------------------
+    |
+    | The OAuth Client ID for the application, the ID for your application
+    | will be supplied by MBL Solutions.
+    |
+    */
+
     'client_id' => env('ID_CLIENT_ID', null),
 
     /*
@@ -62,23 +74,5 @@ return [
 
     'session' => env('ID_SESSION', 'simfoniretail_auth_session'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Simfoni Retail
-    |--------------------------------------------------------------------------
-    |
-    | The Simfoni Retail Roles that are allowed access to the application
-    |
-    */
-
-    'roles' => [
-        'admin',
-        'programme_manager',
-        'customer_service_manager',
-        'customer_service_operator',
-        'store_manager',
-        'store_operator',
-        'report',
-    ]
 
 ];

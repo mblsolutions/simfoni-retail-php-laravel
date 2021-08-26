@@ -10,7 +10,7 @@ use Illuminate\Support\ServiceProvider;
 use MBLSolutions\SimfoniRetail\Exceptions\NotFoundException;
 use MBLSolutions\SimfoniRetail\Exceptions\PermissionDeniedException;
 use MBLSolutions\SimfoniRetail\Exceptions\ValidationException;
-use MBLSolutions\SimfoniRetail\SimfoniRetail;
+use MBLSolutions\SimfoniRetail\Auth\SimfoniRetail;
 use MBLSolutions\SimfoniRetailLaravel\Middleware\LoadSimfoniRetailConfig;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -41,7 +41,7 @@ class SimfoniRetailServiceProvider extends ServiceProvider
         $this->app->singleton(SimfoniRetail::class, static function () {
             SimfoniRetail::setBaseUri(config('SimfoniRetail.endpoint'));
             SimfoniRetail::setVerifySSL(config('SimfoniRetail.verify_ssl', true));
-
+            SimfoniRetail::setToken(config('SimfoniRetail.simfoni_api_token'));
             return new SimfoniRetail;
         });
     }

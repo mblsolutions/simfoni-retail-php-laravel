@@ -4,87 +4,87 @@ namespace MBLSolutions\SimfoniRetailLaravel\Tests\Model;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
-use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Brand;
+use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\funds;
 use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
 
 class SimfoniRetailModelResourceMethodsTest extends TestCase
 {
-    /** @var Brand $brand */
-    protected $brand;
+    /** @var funds $funds */
+    protected $funds;
 
     /** {@inheritdoc} **/
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->brand = new Brand();
+        $this->funds = new funds();
 
-        $this->brand::fake();
+        $this->funds::fake();
     }
 
     /** @test */
     public function can_access_resource_method_that_returns_collection()
     {
-        $this->brand->setFakeResponse([
+        $this->funds->setFakeResponse([
             'data' => [
                 [
                     'id' => 1,
-                    'name' => 'Test Brand 1',
+                    'name' => 'Test funds 1',
                     'active' => true
                 ],
                 [
                     'id' => 2,
-                    'name' => 'Test Brand 2',
+                    'name' => 'Test funds 2',
                     'active' => true
                 ]
             ]
         ]);
 
-        $brands = $this->brand->select();
+        $funds = $this->funds->select();
 
-        $this->assertInstanceOf(Collection::class, $brands);
-        $this->assertInstanceOf(Brand::class, $brands->first());
+        $this->assertInstanceOf(Collection::class, $funds);
+        $this->assertInstanceOf(funds::class, $funds->first());
         $this->assertEquals([
             'id' => 1,
-            'name' => 'Test Brand 1',
+            'name' => 'Test funds 1',
             'active' => true
-        ], $brands->first()->toArray());
+        ], $funds->first()->toArray());
     }
 
     /** @test **/
     public function can_access_resource_method_show()
     {
-        $this->brand->setFakeResponse([
+        $this->funds->setFakeResponse([
             'data' => [
                 'id' => 1,
-                'name' => 'Test Brand',
+                'name' => 'Test funds',
                 'active' => true
             ]
         ]);
 
-        $brand = $this->brand->show(1);
+        $funds = $this->funds->show(1);
 
-        $this->assertInstanceOf(Brand::class, $brand);
+        $this->assertInstanceOf(funds::class, $funds);
         $this->assertEquals([
             'id' => 1,
-            'name' => 'Test Brand',
+            'name' => 'Test funds',
             'active' => true
-        ], $brand->toArray());
+        ], $funds->toArray());
     }
 
     /** @test **/
     public function can_access_resource_method_all()
     {
-        $this->brand->setFakeResponse([
+        $this->funds->setFakeResponse([
             'data' => [
                 [
                     'id' => 1,
-                    'name' => 'Test Brand 1',
+                    'name' => 'Test funds 1',
                     'active' => true
                 ],
                 [
                     'id' => 2,
-                    'name' => 'Test Brand 2',
+                    'name' => 'Test funds 2',
                     'active' => true
                 ]
             ],
@@ -105,9 +105,9 @@ class SimfoniRetailModelResourceMethodsTest extends TestCase
             ]
         ]);
 
-        $brands = $this->brand->all();
+        $funds = $this->funds->all();
 
-        $this->assertInstanceOf(LengthAwarePaginator::class, $brands);
+        $this->assertInstanceOf(LengthAwarePaginator::class, $funds);
     }
 
 }
