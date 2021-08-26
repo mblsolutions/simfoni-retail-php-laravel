@@ -1,0 +1,155 @@
+<?php
+
+namespace MBLSolutions\SimfoniRetailLaravel;
+
+use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\Session;
+use MBLSolutions\SimfoniRetail\Authentication as SimfoniRetailAuth;
+use MBLSolutions\SimfoniRetail\Exceptions\AuthenticationException;
+use MBLSolutions\SimfoniRetailLaravel\Exceptions\InvalidUserRoleException;
+use MBLSolutions\SimfoniRetailLaravel\SimfoniRetailAuth as AuthenticationInterface;
+
+class Authentication implements AuthenticationInterface
+{
+    /** @var string $key */
+    public $sessionKey;
+
+    /** @var SimfoniRetailAuth $authResource */
+    public $authResource;
+
+    /** @var array $validRoles */
+    protected $validRoles;
+
+    /**
+     * Simfoni Retail Authentication
+     *
+     * @param SimfoniRetailAuth|null $authResource
+     */
+    public function __construct(SimfoniRetailAuth $authResource = null)
+    {
+        $this->sessionKey = config('SimfoniRetail.session');
+
+        $this->authResource = $authResource ?? new SimfoniRetailAuth;
+    }
+
+    /**
+     * Get the currently Authenticated User
+     *
+     * @return mixed
+     */
+    public function get(): array
+    {
+        return Session::get($this->sessionKey, false);
+    }
+
+    /**
+     * Authenticate the User using OAuth Password Grant
+     *
+     * @param string $username
+     * @param string $password
+     * @return bool
+     * @throws GuzzleException
+     * @throws AuthenticationException
+     */
+    public function login($username, $password): bool
+    {
+        Session::regenerate();
+
+        $response = $this->authResource->password(
+            config('SimfoniRetail.client_id'),
+            config('SimfoniRetail.secret'),
+            $username,
+            $password
+        );
+
+        if (isset($response['api_version'])) {
+            Session::put('api_version', $response['api_version']);
+        }
+
+        return $this->validateUserRole($response) && $this->store($response);
+    }
+
+    /**
+     * Remove OAuth session
+     *
+     * @return bool
+     */
+    public function logout(): bool
+    {
+        Session::forget($this->sessionKey);
+
+        return true;
+    }
+
+    /**
+     * Store the OAuth session
+     *
+     * @param array $auth
+     * @return bool
+     */
+    private function store(array $auth): bool
+    {
+        Session::put($this->sessionKey, $auth);
+
+        return true;
+    }
+
+    /**
+     * Validate User Role
+     *
+     * @param array $response
+     * @return bool
+     */
+    private function validateUserRole(array $response): bool
+    {
+        $role = $response['user']['role'] ?? null;
+
+        if (!in_array($role, $this->validRoles, true)) {
+            throw new InvalidUserRoleException(403, 'Your user role does not have permission for this action');
+        }
+
+        return true;
+    }
+
+    /**
+     * Check if current user is authenticated
+     *
+     * @return bool
+     */
+    public function isAuthenticated(): bool
+    {
+        $auth = Session::get($this->sessionKey);
+
+        return $this->validateAuthentication($auth);
+    }
+
+    /**
+     * Validate Authentication
+     *
+     * @param null $auth
+     * @return bool
+     */
+    private function validateAuthentication($auth = null): bool
+    {
+        $matchingKeys = [
+            'token_type',
+            'expires_in',
+            'access_token',
+            'refresh_token',
+            'user'
+        ];
+
+        if (!$auth) {
+            return false;
+        }
+
+        foreach ($matchingKeys as $key) {
+            if (!array_key_exists($key, $auth)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+}
