@@ -1,13 +1,13 @@
 <?php
 
-namespace MBLSolutions\InspiredDeckLaravel\Tests\Model;
+namespace MBLSolutions\SimfoniRetailLaravel\Tests\Model;
 
-use MBLSolutions\InspiredDeck\Profile;
-use MBLSolutions\InspiredDeckLaravel\Model\InspiredDeckModel;
-use MBLSolutions\InspiredDeckLaravel\Tests\Stubs\Brand;
-use MBLSolutions\InspiredDeckLaravel\Tests\TestCase;
+use MBLSolutions\SimfoniRetail\Profile;
+use MBLSolutions\SimfoniRetailLaravel\Model\SimfoniRetailModel;
+use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Brand;
+use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
 
-class InspiredDeckModelTest extends TestCase
+class SimfoniRetailModelTest extends TestCase
 {
 
     /** @test **/
@@ -15,7 +15,7 @@ class InspiredDeckModelTest extends TestCase
     {
         $model = new Brand();
 
-        $this->assertInstanceOf(InspiredDeckModel::class, $model);
+        $this->assertInstanceOf(SimfoniRetailModel::class, $model);
     }
 
     /** @test **/
@@ -97,7 +97,7 @@ class InspiredDeckModelTest extends TestCase
     {
         $model = new Brand();
 
-        $this->assertEquals(\MBLSolutions\InspiredDeck\Brand::class, $model->getResource());
+        $this->assertEquals(\MBLSolutions\SimfoniRetail\Brand::class, $model->getResource());
     }
 
     /** @test */
@@ -105,7 +105,7 @@ class InspiredDeckModelTest extends TestCase
     {
         $model = new Brand();
 
-        $model->setResource('MBLSolutions\InspiredDeck\Profile');
+        $model->setResource('MBLSolutions\SimfoniRetail\Profile');
 
         $this->assertEquals(Profile::class, $model->getResource());
     }
@@ -115,8 +115,8 @@ class InspiredDeckModelTest extends TestCase
     {
         $model = new Brand();
 
-        $this->assertInstanceOf(\MBLSolutions\InspiredDeck\Brand::class, $model->resource());
-        $this->assertInstanceOf(\MBLSolutions\InspiredDeck\Api\ApiResource::class, $model->resource());
+        $this->assertInstanceOf(\MBLSolutions\SimfoniRetail\Brand::class, $model->resource());
+        $this->assertInstanceOf(\MBLSolutions\SimfoniRetail\Api\ApiResource::class, $model->resource());
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace MBLSolutions\InspiredDeckLaravel\Tests;
+namespace MBLSolutions\SimfoniRetailLaravel\Tests;
 
 use Illuminate\Foundation\Application;
 use MBLSolutions\Report\Tests\Fakes\ExportDriver\FakeExportDriver;
@@ -25,12 +25,12 @@ class LaravelTestCase extends \Orchestra\Testbench\TestCase
      */
     protected function getEnvironmentSetUp($app): void
     {
-        $config = include __DIR__ . '/../config/inspireddeck.php';
+        $config = include __DIR__ . '/../config/SimfoniRetail.php';
 
-        $app['config']->set('inspireddeck.session', 'inspireddeck_auth_session');
-        $app['config']->set('inspireddeck.client_id', 1);
-        $app['config']->set('inspireddeck.secret', 'secret');
-        $app['config']->set('inspireddeck.roles', [
+        $app['config']->set('SimfoniRetail.session', 'SimfoniRetail_auth_session');
+        $app['config']->set('SimfoniRetail.client_id', 1);
+        $app['config']->set('SimfoniRetail.secret', 'secret');
+        $app['config']->set('SimfoniRetail.roles', [
             'admin',
             'programme_manager',
             'customer_service_manager',

@@ -1,13 +1,13 @@
 <?php
 
-namespace MBLSolutions\InspiredDeckLaravel\Tests\Model;
+namespace MBLSolutions\SimfoniRetailLaravel\Tests\Model;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
-use MBLSolutions\InspiredDeckLaravel\Tests\Stubs\Brand;
-use MBLSolutions\InspiredDeckLaravel\Tests\TestCase;
+use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Brand;
+use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
 
-class InspiredDeckModelResourceMethodsTest extends TestCase
+class SimfoniRetailModelResourceMethodsTest extends TestCase
 {
     /** @var Brand $brand */
     protected $brand;

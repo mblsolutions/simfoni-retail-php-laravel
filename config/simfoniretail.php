@@ -62,4 +62,23 @@ return [
 
     'session' => env('ID_SESSION', 'simfoniretail_auth_session'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Simfoni Retail
+    |--------------------------------------------------------------------------
+    |
+    | The Simfoni Retail Roles that are allowed access to the application
+    |
+    */
+
+    'roles' => [
+        'admin',
+        'programme_manager',
+        'customer_service_manager',
+        'customer_service_operator',
+        'store_manager',
+        'store_operator',
+        'report',
+    ]
+
 ];

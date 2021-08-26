@@ -1,10 +1,10 @@
 <?php
 
-namespace MBLSolutions\InspiredDeckLaravel\Tests\Stubs;
+namespace MBLSolutions\SimfoniRetailLaravel\Tests\Stubs;
 
-use MBLSolutions\InspiredDeckLaravel\Model\InspiredDeckModel;
+use MBLSolutions\SimfoniRetailLaravel\Model\SimfoniRetailModel;
 
-class Brand extends InspiredDeckModel
+class Brand extends SimfoniRetailModel
 {
 
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace MBLSolutions\InspiredDeckLaravel\Tests\Unit;
+namespace MBLSolutions\SimfoniRetailLaravel\Tests\Unit;
 
-use MBLSolutions\InspiredDeck\Authentication as InspiredDeckAuthentication;
-use MBLSolutions\InspiredDeckLaravel\Authentication;
-use MBLSolutions\InspiredDeckLaravel\Exceptions\InvalidUserRoleException;
-use MBLSolutions\InspiredDeckLaravel\Tests\LaravelTestCase;
+use MBLSolutions\SimfoniRetail\Authentication as SimfoniRetailAuthentication;
+use MBLSolutions\SimfoniRetailLaravel\Authentication;
+use MBLSolutions\SimfoniRetailLaravel\Exceptions\InvalidUserRoleException;
+use MBLSolutions\SimfoniRetailLaravel\Tests\LaravelTestCase;
 
 class AuthenticationTest extends LaravelTestCase
 {
@@ -13,7 +13,7 @@ class AuthenticationTest extends LaravelTestCase
     /** @test **/
     public function can_authenticate(): void
     {
-        $stub = $this->createMock(InspiredDeckAuthentication::class);
+        $stub = $this->createMock(SimfoniRetailAuthentication::class);
 
         $stub->method('password')
              ->willReturn([
@@ -52,7 +52,7 @@ class AuthenticationTest extends LaravelTestCase
             'api_version' => 'v1.0.0',
         ];
 
-        $stub = $this->createMock(InspiredDeckAuthentication::class);
+        $stub = $this->createMock(SimfoniRetailAuthentication::class);
 
         $stub->method('password')
              ->willReturn($response);
@@ -61,7 +61,7 @@ class AuthenticationTest extends LaravelTestCase
 
         $authentication->login('john.doe@example.com', 'password');
 
-        $this->assertEquals($response, session()->get('inspireddeck_auth_session'));
+        $this->assertEquals($response, session()->get('SimfoniRetail_auth_session'));
     }
 
     /** @test **/
@@ -82,7 +82,7 @@ class AuthenticationTest extends LaravelTestCase
             'api_version' => 'v1.0.0',
         ];
 
-        $stub = $this->createMock(InspiredDeckAuthentication::class);
+        $stub = $this->createMock(SimfoniRetailAuthentication::class);
 
         $stub->method('password')
             ->willReturn($response);
@@ -112,7 +112,7 @@ class AuthenticationTest extends LaravelTestCase
             'api_version' => 'v1.0.0',
         ];
 
-        $stub = $this->createMock(InspiredDeckAuthentication::class);
+        $stub = $this->createMock(SimfoniRetailAuthentication::class);
 
         $stub->method('password')
              ->willReturn($response);
@@ -138,13 +138,13 @@ class AuthenticationTest extends LaravelTestCase
             'api_version' => 'v1.0.0',
         ];
 
-        session()->put('inspireddeck_auth_session', $response);
+        session()->put('SimfoniRetail_auth_session', $response);
 
         $authentication = new Authentication();
 
         $authentication->logout();
 
-        $this->assertNull(session()->get('inspireddeck_auth_session'));
+        $this->assertNull(session()->get('SimfoniRetail_auth_session'));
     }
 
     /** @test **/
@@ -163,7 +163,7 @@ class AuthenticationTest extends LaravelTestCase
             'api_version' => 'v1.0.0',
         ];
 
-        session()->put('inspireddeck_auth_session', $response);
+        session()->put('SimfoniRetail_auth_session', $response);
 
         $authentication = new Authentication();
 
@@ -177,7 +177,7 @@ class AuthenticationTest extends LaravelTestCase
             'success' => true
         ];
 
-        session()->put('inspireddeck_auth_session', $response);
+        session()->put('SimfoniRetail_auth_session', $response);
 
         $authentication = new Authentication();
 

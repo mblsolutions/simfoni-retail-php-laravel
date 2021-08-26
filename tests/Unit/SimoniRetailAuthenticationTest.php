@@ -1,19 +1,19 @@
 <?php
 
-namespace MBLSolutions\InspiredDeckLaravel\Tests\Unit;
+namespace MBLSolutions\SimfoniRetailLaravel\Tests\Unit;
 
-use MBLSolutions\InspiredDeckLaravel\InspiredDeckAuth;
-use MBLSolutions\InspiredDeckLaravel\InspiredDeckAuthentication;
-use MBLSolutions\InspiredDeckLaravel\Tests\LaravelTestCase;
+use MBLSolutions\SimfoniRetailLaravel\SimfoniRetailAuth;
+use MBLSolutions\SimfoniRetailLaravel\SimfoniRetailAuthentication;
+use MBLSolutions\SimfoniRetailLaravel\Tests\LaravelTestCase;
 use Mockery;
 
-class InspiredDeckAuthenticationTest extends LaravelTestCase
+class SimfoniRetailAuthenticationTest extends LaravelTestCase
 {
 
     /** @test **/
     public function can_get_users_name(): void
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -22,7 +22,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ]
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
         $this->assertEquals('John Doe', $authentication->getName());
     }
@@ -30,7 +30,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
     /** @test **/
     public function can_get_users_email(): void
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -39,7 +39,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ]
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
         $this->assertEquals('john.doe@example.com', $authentication->getEmail());
     }
@@ -47,7 +47,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
     /** @test * */
     public function can_get_users_role(): void
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -56,7 +56,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ]
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
         $this->assertEquals('programme_manager', $authentication->getRole());
     }
@@ -64,7 +64,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
     /** @test * */
     public function can_check_user_has_role(): void
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -73,7 +73,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ]
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
         $this->assertTrue($authentication->hasRole('programme_manager'));
         $this->assertFalse($authentication->hasRole('customer_service_manager'));
@@ -82,7 +82,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
     /** @test * */
     public function can_check_if_user_has_roles(): void
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -91,7 +91,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ]
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
         $this->assertTrue($authentication->hasRoles([
             'programme_manager',
@@ -107,7 +107,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
     /** @test * */
     public function can_get_users_brand(): void
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -120,7 +120,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ],
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
 
         self::assertIsArray($authentication->getBrand());
@@ -130,7 +130,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
     /** @test */
     public function can_get_users_display_name()
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -143,7 +143,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ],
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
         self::assertIsArray($authentication->getBrand());
         self::assertEquals('Acme Inc | John Doe', $authentication->getDisplayName());
@@ -152,7 +152,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
     /** @test */
     public function display_names_without_brand_display_only_name()
     {
-        $auth = Mockery::mock(InspiredDeckAuth::class);
+        $auth = Mockery::mock(SimfoniRetailAuth::class);
 
         $auth->shouldReceive('get')
             ->andReturn([
@@ -162,7 +162,7 @@ class InspiredDeckAuthenticationTest extends LaravelTestCase
                 ],
             ]);
 
-        $authentication = new InspiredDeckAuthentication($auth);
+        $authentication = new SimfoniRetailAuthentication($auth);
 
         self::assertEquals('John Doe', $authentication->getDisplayName());
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace MBLSolutions\InspiredDeckLaravel\Tests;
+namespace MBLSolutions\SimfoniRetailLaravel\Tests;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
