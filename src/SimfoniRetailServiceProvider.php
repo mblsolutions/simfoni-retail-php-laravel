@@ -25,7 +25,7 @@ class SimfoniRetailServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/SimfoniRetail.php' => config_path('simfoniretail.php'),
+            __DIR__ . '/../config/simfoniretail.php' => config_path('simfoniretail.php'),
         ], 'config');
 
         $this->registerMiddleware(LoadSimfoniRetailConfig::class);
