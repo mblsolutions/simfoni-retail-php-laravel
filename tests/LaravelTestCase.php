@@ -27,10 +27,10 @@ class LaravelTestCase extends \Orchestra\Testbench\TestCase
     {
         $config = include __DIR__ . '/../config/SimfoniRetail.php';
 
-        $app['config']->set('SimfoniRetail.session', 'SimfoniRetail_auth_session');
-        $app['config']->set('SimfoniRetail.client_id', 1);
-        $app['config']->set('SimfoniRetail.secret', 'secret');
-        $app['config']->set('SimfoniRetail.roles', [
+        $app['config']->set('simfoniretail.session', 'SimfoniRetail_auth_session');
+        $app['config']->set('simfoniretail.client_id', 1);
+        $app['config']->set('simfoniretail.secret', 'secret');
+        $app['config']->set('simfoniretail.roles', [
             'admin',
             'programme_manager',
             'customer_service_manager',
