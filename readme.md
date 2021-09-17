@@ -1,5 +1,11 @@
 # Simfoni Retail interface for Laravel
 
+
+<a href="https://packagist.org/packages/mblsolutions/simfoni-retail-php-laravel"><img src="https://github.com/mblsolutions/simfoni-retail-php-laravel/actions/workflows/php.yml/badge.svg"></a>
+<a href="https://packagist.org/packages/mblsolutions/simfoniretail-php-laravel"><img src="https://img.shields.io/packagist/v/mblsolutions/simfoniretail-php-laravel" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/mblsolutions/simfoniretail-php-laravel"><img src="https://img.shields.io/packagist/l/mblsolutions/simfoniretail-php-laravel" alt="License"></a>
+
+
 The Simfoni Retail Interface for Laravel gives you an API interface into the Simfoni Retail Platform
 for your Laravel applications.
 
