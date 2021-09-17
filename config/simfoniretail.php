@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'endpoint' => env('ID_ENDPOINT', 'https://development.simfoni.io'),
+    'endpoint' => env('SIMFONI_RETAIL_ENDPOINT', 'https://staging.simfoni.io'),
 
     /*
     |--------------------------------------------------------------------------
@@ -37,42 +37,6 @@ return [
     */
 
     'simfoni_api_token' => env('SIMFONI_API_TOKEN', null),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Simfoni Retail OAuth Client ID
-    |--------------------------------------------------------------------------
-    |
-    | The OAuth Client ID for the application, the ID for your application
-    | will be supplied by MBL Solutions.
-    |
-    */
-
-    'client_id' => env('ID_CLIENT_ID', null),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Simfoni Retail OAuth Secret
-    |--------------------------------------------------------------------------
-    |
-    | The OAuth secret for the application, the secret for your application
-    | will be supplied by MBL Solutions.
-    |
-    */
-
-    'secret' => env('ID_SECRET', null),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Session Cookie Name
-    |--------------------------------------------------------------------------
-    |
-    | Here you can specify the session cookie name used to identify the an
-    | Simfoni Retail Authentication session instance.
-    |
-    */
-
-    'session' => env('ID_SESSION', 'simfoniretail_auth_session'),
 
 
 ];

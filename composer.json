@@ -6,8 +6,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "MBL Solutions Ltd.",
-            "email": "support@mblsolutions.co.uk"
+            "name": "Redu Group",
+            "email": "tech@redu.co.uk"
         }
     ],
     "require": {
@@ -38,10 +38,7 @@
         "laravel": {
             "providers": [
                 "MBLSolutions\\SimfoniRetailLaravel\\SimfoniRetailServiceProvider"
-            ],
-            "aliases": {
-                "SimfoniRetailAuth": "\\MBLSolutions\\SimfoniRetailLaravel\\SimfoniRetailAuthFacade"
-            }
+            ]
         }
     }
 }

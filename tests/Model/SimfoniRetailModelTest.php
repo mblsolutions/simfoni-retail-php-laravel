@@ -2,7 +2,6 @@
 
 namespace MBLSolutions\SimfoniRetailLaravel\Tests\Model;
 
-use MBLSolutions\SimfoniRetail\Profile;
 use MBLSolutions\SimfoniRetailLaravel\Model\SimfoniRetailModel;
 use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Funds;
 use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
@@ -11,7 +10,7 @@ class SimfoniRetailModelTest extends TestCase
 {
 
     /** @test **/
-    public function can_create_a_new_inspired_deck_model()
+    public function can_create_a_new_simfoni_retail_model()
     {
         $model = new Funds();
 
