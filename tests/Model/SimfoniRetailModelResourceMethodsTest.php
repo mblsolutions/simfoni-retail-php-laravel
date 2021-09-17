@@ -4,7 +4,7 @@ namespace MBLSolutions\SimfoniRetailLaravel\Tests\Model;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
-use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\funds;
+use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Funds;
 use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
 
 class SimfoniRetailModelResourceMethodsTest extends TestCase
@@ -17,7 +17,7 @@ class SimfoniRetailModelResourceMethodsTest extends TestCase
     {
         parent::setUp();
 
-        $this->funds = new funds();
+        $this->funds = new Funds();
 
         $this->funds::fake();
     }
