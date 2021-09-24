@@ -24,7 +24,7 @@ available from the ‘Integrations’ menu item of Simfoni Retail.
 The recommended way to install Simfoni Retail Laravel is through [Composer](https://getcomposer.org/).
 
 ```bash
-composer require mblsolutions/simfoni-retail-php-laravel
+composer require mblsolutions/simfoniretail-php-laravel
 ```
 
 ## Laravel without auto-discovery
