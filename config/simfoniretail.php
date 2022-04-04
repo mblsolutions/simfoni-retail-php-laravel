@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'endpoint' => env('SIMFONI_RETAIL_ENDPOINT', 'https://staging.simfoni.io'),
+    'endpoint' => env('SIMFONI_RETAIL_ENDPOINT', 'https://simfoni.tech'),
 
     /*
     |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return [
     |
     | Verify SSL certificates via API calls. We do not recommend disabling
     | this for security reasons. This should only be adjusted when developing
-    | locally using a self signed SSL certificate.
+    | locally using a self-signed SSL certificate.
     |
     */
 
@@ -36,7 +36,18 @@ return [
     |
     */
 
-    'simfoni_api_token' => env('SIMFONI_API_TOKEN', null),
+    'simfoni_api_token' => env('SIMFONI_API_TOKEN', ''),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Simfoni Retail Bulk Order Limit
+    |--------------------------------------------------------------------------
+    |
+    | The bulk order limit imposed by Simfoni Retail when placing bulk orders
+    | due to the request size and dynamoDB restrictions.
+    |
+    */
+
+    'bulk_limit' => (int) env('SIMFONI_RETAIL_BULK_LIMIT', 100),
 
 ];

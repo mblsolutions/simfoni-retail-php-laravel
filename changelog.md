@@ -1,3 +1,8 @@
+## v1.2.0
+
++ Update default staging endpoint to .tech TLD
++ Add bulk order limit config
+
 ## v1.1.0
 
 + Add support for Laravel 9
