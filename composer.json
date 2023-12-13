@@ -3,7 +3,7 @@
     "description": "Official Simfoni Retail interface for Laravel PHP applications.",
     "keywords": ["simfoniretail", "laravel"],
     "type": "package",
-    "license": "MIT",
+    "license": "proprietary",
     "authors": [
         {
             "name": "MBL Solutions Ltd.",
