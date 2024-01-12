@@ -1,3 +1,7 @@
+## v1.3.0
+
++ Bump simfoni-retail-php and php unit versions
+
 ## v1.2.0
 
 + Update default staging endpoint to .tech TLD
