@@ -25,7 +25,7 @@ class SimfoniRetailServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/SimfoniRetail.php' => config_path('SimfoniRetail.php'),
+            __DIR__ . '/../config/simfoniretail.php' => config_path('simfoniretail.php'),
         ], 'config');
 
         $this->registerMiddleware(LoadSimfoniRetailConfig::class);
@@ -39,9 +39,9 @@ class SimfoniRetailServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(SimfoniRetail::class, static function () {
-            SimfoniRetail::setBaseUri(config('SimfoniRetail.endpoint'));
-            SimfoniRetail::setVerifySSL(config('SimfoniRetail.verify_ssl', true));
-            SimfoniRetail::setToken(config('SimfoniRetail.simfoni_api_token'));
+            SimfoniRetail::setBaseUri(config('simfoniretail.endpoint'));
+            SimfoniRetail::setVerifySSL(config('simfoniretail.verify_ssl', true));
+            SimfoniRetail::setToken(config('simfoniretail.simfoni_api_token'));
             return new SimfoniRetail;
         });
     }

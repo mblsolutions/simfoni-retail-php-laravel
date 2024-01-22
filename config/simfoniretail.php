@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'endpoint' => env('ID_ENDPOINT', 'https://development.simfoni.io'),
+    'endpoint' => env('SIMFONI_RETAIL_ENDPOINT', 'https://simfoni.tech'),
 
     /*
     |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return [
     |
     | Verify SSL certificates via API calls. We do not recommend disabling
     | this for security reasons. This should only be adjusted when developing
-    | locally using a self signed SSL certificate.
+    | locally using a self-signed SSL certificate.
     |
     */
 
@@ -36,43 +36,18 @@ return [
     |
     */
 
-    'simfoni_api_token' => env('SIMFONI_API_TOKEN', null),
+    'simfoni_api_token' => env('SIMFONI_API_TOKEN', ''),
 
     /*
     |--------------------------------------------------------------------------
-    | Simfoni Retail OAuth Client ID
+    | Simfoni Retail Bulk Order Limit
     |--------------------------------------------------------------------------
     |
-    | The OAuth Client ID for the application, the ID for your application
-    | will be supplied by MBL Solutions.
+    | The bulk order limit imposed by Simfoni Retail when placing bulk orders
+    | due to the request size and dynamoDB restrictions.
     |
     */
 
-    'client_id' => env('ID_CLIENT_ID', null),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Simfoni Retail OAuth Secret
-    |--------------------------------------------------------------------------
-    |
-    | The OAuth secret for the application, the secret for your application
-    | will be supplied by MBL Solutions.
-    |
-    */
-
-    'secret' => env('ID_SECRET', null),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Session Cookie Name
-    |--------------------------------------------------------------------------
-    |
-    | Here you can specify the session cookie name used to identify the an
-    | Simfoni Retail Authentication session instance.
-    |
-    */
-
-    'session' => env('ID_SESSION', 'simfoniretail_auth_session'),
-
+    'bulk_limit' => (int) env('SIMFONI_RETAIL_BULK_LIMIT', 100),
 
 ];
