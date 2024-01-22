@@ -3,7 +3,7 @@
     "description": "Official Simfoni Retail interface for Laravel PHP applications.",
     "keywords": ["simfoniretail", "laravel"],
     "type": "package",
-    "license": "MIT",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Redu Group",
@@ -13,10 +13,10 @@
     "require": {
         "php": "^8.0|^8.1",
         "ext-json": "*",
-        "illuminate/routing": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0",
-        "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0",
-        "illuminate/session": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0",
-        "illuminate/pagination": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/routing": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^v10",
+        "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^v10",
+        "illuminate/session": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^v10",
+        "illuminate/pagination": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0|^9.0|^v10",
         "mblsolutions/simfoni-retail-php": "*"
     },
     "require-dev": {
