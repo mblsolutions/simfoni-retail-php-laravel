@@ -1,3 +1,9 @@
+## v1.3.0
+
++ Add support for PHP8.4
++ Add support for Laravel 12
++ Update unit tests to support PHP unit 10 & 11
+
 ## v1.2.0
 
 + Update default staging endpoint to .tech TLD
