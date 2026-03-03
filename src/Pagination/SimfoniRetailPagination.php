@@ -7,11 +7,9 @@ use MBLSolutions\SimfoniRetail\Api\ApiResource;
 
 class SimfoniRetailPagination
 {
-    /** @var ApiResource $resource */
-    public $resource;
+    public ApiResource $resource;
 
-    /** @var int $currentPage */
-    public $currentPage;
+    public int $currentPage;
 
     /**
      * Create a new Paginated API Result
@@ -31,7 +29,7 @@ class SimfoniRetailPagination
      * @param array $options
      * @return LengthAwarePaginator
      */
-    public function paginate(array $options = [])
+    public function paginate(array $options = []): LengthAwarePaginator
     {
         $result = $this->resource->all($this->currentPage);
 

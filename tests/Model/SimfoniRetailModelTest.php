@@ -5,11 +5,12 @@ namespace MBLSolutions\SimfoniRetailLaravel\Tests\Model;
 use MBLSolutions\SimfoniRetailLaravel\Model\SimfoniRetailModel;
 use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Funds;
 use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class SimfoniRetailModelTest extends TestCase
 {
 
-    /** @test **/
+    #[Test]
     public function can_create_a_new_simfoni_retail_model()
     {
         $model = new Funds();
@@ -17,7 +18,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertInstanceOf(SimfoniRetailModel::class, $model);
     }
 
-    /** @test **/
+    #[Test]
     public function can_fill_attributes_on_model_construction()
     {
         $attributes = [
@@ -30,7 +31,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertEquals($attributes, $model->toArray());
     }
 
-    /** @test **/
+    #[Test]
     public function can_fill_attributes()
     {
         $attributes = [
@@ -45,7 +46,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertEquals($attributes, $model->toArray());
     }
 
-    /** @test */
+    #[Test]
     public function can_convert_model_to_array()
     {
         $attributes = [
@@ -58,7 +59,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertEquals($attributes, $model->toArray());
     }
 
-    /** @test **/
+    #[Test]
     public function can_convert_model_to_json()
     {
         $attributes = [
@@ -71,7 +72,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertEquals(json_encode($attributes), $model->toJson());
     }
 
-    /** @test **/
+    #[Test]
     public function can_set_attribute()
     {
         $model = new Funds();
@@ -81,7 +82,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertEquals(1, $model->id);
     }
 
-    /** @test **/
+    #[Test]
     public function can_get_attribute()
     {
         $model = new Funds([
@@ -91,7 +92,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertEquals(1, $model->getAttribute('id'));
     }
 
-    /** @test */
+    #[Test]
     public function can_get_models_resource()
     {
         $model = new Funds();
@@ -99,7 +100,7 @@ class SimfoniRetailModelTest extends TestCase
         $this->assertEquals(\MBLSolutions\SimfoniRetail\Funds::class, $model->getResource());
     }
 
-    /** @test */
+    #[Test]
     public function can_get_resource()
     {
         $model = new Funds();

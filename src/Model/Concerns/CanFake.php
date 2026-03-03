@@ -10,11 +10,9 @@ use MBLSolutions\SimfoniRetail\Api\ApiRequestor;
 
 trait CanFake
 {
-    /** @var bool $fake */
-    protected static $fake = false;
+    protected static bool $fake = false;
 
-    /** @var null|Response $mockedResponse */
-    private $mockedResponse;
+    private ?Response $mockedResponse = null;
 
     /**
      * Set Model to fake HTTP calls
@@ -41,7 +39,7 @@ trait CanFake
      * @param int $code
      * @param array|null $headers
      */
-    public function setFakeResponse(array $response, int $code = 200, array $headers = null)
+    public function setFakeResponse(array $response, int $code = 200, ?array $headers = null)
     {
         $this->mockedResponse = new Response(
             $code,

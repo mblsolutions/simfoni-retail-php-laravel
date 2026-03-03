@@ -22,7 +22,7 @@ class SimfoniRetailServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__ . '/../config/simfoniretail.php' => config_path('simfoniretail.php'),
@@ -36,7 +36,7 @@ class SimfoniRetailServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(SimfoniRetail::class, static function () {
             SimfoniRetail::setBaseUri(config('simfoniretail.endpoint'));
@@ -52,7 +52,7 @@ class SimfoniRetailServiceProvider extends ServiceProvider
      * @param $middleware
      * @return void
      */
-    public function registerMiddleware($middleware)
+    public function registerMiddleware(string $middleware): void
     {
         $kernel = $this->app[Kernel::class];
 
@@ -67,7 +67,7 @@ class SimfoniRetailServiceProvider extends ServiceProvider
      * @param callable|null $function
      * @return JsonResponse|RedirectResponse
      */
-    public static function exceptionHandling($request, Exception $exception, callable $function = null)
+    public static function exceptionHandling($request, Exception $exception, ?callable $function = null)
     {
         if (route_contains('async') || route_contains('api')) {
             if ($exception instanceof ValidationException) {
