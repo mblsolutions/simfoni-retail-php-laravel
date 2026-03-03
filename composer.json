@@ -13,14 +13,14 @@
     "require": {
         "php": "^8.4",
         "ext-json": "*",
-        "illuminate/routing": "^10.0|^11.0",
-        "illuminate/support": "^10.0|^11.0",
-        "illuminate/session": "^10.0|^11.0",
-        "illuminate/pagination": "^10.0|^11.0",
+        "illuminate/routing": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/session": "^10.0|^11.0|^12.0",
+        "illuminate/pagination": "^10.0|^11.0|^12.0",
         "mblsolutions/simfoni-retail-php": "dev-feature/AB+114584-PHP8.4-upgrade"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0|^9.0",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
         "phpunit/phpunit": "^10.0|^11.0"
     },
     "autoload": {
