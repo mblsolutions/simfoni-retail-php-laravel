@@ -6,6 +6,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use MBLSolutions\SimfoniRetailLaravel\Tests\Stubs\Funds;
 use MBLSolutions\SimfoniRetailLaravel\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class SimfoniRetailModelResourceMethodsTest extends TestCase
 {
@@ -22,7 +23,7 @@ class SimfoniRetailModelResourceMethodsTest extends TestCase
         $this->funds::fake();
     }
 
-    /** @test */
+    #[Test]
     public function can_access_resource_method_that_returns_collection()
     {
         $this->funds->setFakeResponse([
@@ -51,7 +52,7 @@ class SimfoniRetailModelResourceMethodsTest extends TestCase
         ], $funds->first()->toArray());
     }
 
-    /** @test **/
+    #[Test]
     public function can_access_resource_method_show()
     {
         $this->funds->setFakeResponse([
@@ -72,7 +73,7 @@ class SimfoniRetailModelResourceMethodsTest extends TestCase
         ], $funds->toArray());
     }
 
-    /** @test **/
+    #[Test]
     public function can_access_resource_method_all()
     {
         $this->funds->setFakeResponse([
