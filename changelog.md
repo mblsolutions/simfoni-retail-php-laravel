@@ -1,4 +1,4 @@
-## v1.3.0
+## v2.0.0
 
 + Add support for PHP8.4
 + Add support for Laravel 12
