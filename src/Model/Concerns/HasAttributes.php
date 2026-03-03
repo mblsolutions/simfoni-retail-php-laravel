@@ -4,12 +4,7 @@ namespace MBLSolutions\SimfoniRetailLaravel\Model\Concerns;
 
 trait HasAttributes
 {
-    /**
-     * Model Attributes
-     *
-     * @var array
-     */
-    protected $attributes = [];
+    protected array $attributes = [];
 
     /**
      * Get Attribute

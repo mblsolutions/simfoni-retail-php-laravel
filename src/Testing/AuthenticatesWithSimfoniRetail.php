@@ -13,7 +13,7 @@ trait AuthenticatesWithSimfoniRetail
      * @param string|null $role
      * @return array
      */
-    protected function authenticateWithSimfoniRetail(string $role = null): array
+    protected function authenticateWithSimfoniRetail(?string $role = null): array
     {
         $key = $this->getSimfoniRetailAuthentication()->sessionKey;
 

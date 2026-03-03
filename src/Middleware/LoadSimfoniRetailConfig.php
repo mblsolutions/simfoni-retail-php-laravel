@@ -8,8 +8,7 @@ use MBLSolutions\SimfoniRetail\Auth\SimfoniRetail;
 
 class LoadSimfoniRetailConfig
 {
-    /** @var SimfoniRetail $config */
-    protected $config;
+    protected SimfoniRetail $config;
 
     /**
      * Create a new middleware Instance
@@ -28,7 +27,7 @@ class LoadSimfoniRetailConfig
      * @param  Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next): mixed
     {
         return $next($request);
     }

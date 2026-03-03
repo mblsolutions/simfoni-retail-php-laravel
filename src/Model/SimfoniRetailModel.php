@@ -15,17 +15,13 @@ abstract class SimfoniRetailModel
 
     /**
      * The Simfoni Retail API Resource for the model
-     *
-     * @var string
      */
-    protected $resource;
+    protected ?string $resource = null;
 
     /**
      * The API Resource
-     *
-     * @var ApiResource
      */
-    private $apiResource;
+    private ?ApiResource $apiResource = null;
 
     /**
      * Create a New Simfoni Retail Modal Instance
@@ -43,7 +39,7 @@ abstract class SimfoniRetailModel
      * @param array $attributes
      * @return SimfoniRetailModel
      */
-    public function fill(array $attributes)
+    public function fill(array $attributes): static
     {
         foreach ($attributes as $key => $value) {
             $this->setAttribute($key, $value);
@@ -59,7 +55,7 @@ abstract class SimfoniRetailModel
      * @param $resource
      * @return $this
      */
-    public function setResource($resource)
+    public function setResource(string $resource): static
     {
         $this->resource = $resource;
 
@@ -72,7 +68,7 @@ abstract class SimfoniRetailModel
      *
      * @return string
      */
-    public function getResource()
+    public function getResource(): string
     {
         return $this->resource ?? 'MBLSolutions\SimfoniRetail\\' . substr(strrchr(get_called_class(), "\\"), 1);
     }
@@ -151,7 +147,7 @@ abstract class SimfoniRetailModel
      * @param array $options
      * @return LengthAwarePaginator
      */
-    public function all(array $options = [])
+    public function all(array $options = []): LengthAwarePaginator
     {
         $paginator = new SimfoniRetailPagination($this->resource());
 
